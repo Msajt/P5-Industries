@@ -1,0 +1,40 @@
+.CodeMirror {
+    position: absolute;
+    left: 231px;
+    top: 150px;
+    width: 450px;
+    height: 350px;
+    border: 1px solid black;
+  }
+  iframe {
+    position: absolute;
+    right: 232px;
+    top: 150px;
+    width: 450px;
+    height: 350px;
+    border: 1px solid black;
+    border-left: 0px;
+  }
+  .fundo {
+    position: absolute;
+    right: 208px;
+    top: 116px;
+  }
+  .button_run{
+    position: absolute;
+    background-color: darkgray;
+    color: white;
+    font-size: 30px;
+    top: 600px;
+    right: 60%;
+    border-radius: 5px;
+  }
+  .button_refresh{
+    position: absolute;
+    background-color: darkgray;
+    color: white;
+    font-size: 30px;
+    top: 600px;
+    right: 25%;
+    border-radius: 5px;
+  }

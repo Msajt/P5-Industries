@@ -1,0 +1,72 @@
+<!doctype html>
+
+<title>P5 Industries - FASE 06</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="codemirror/doc/docs.css">
+
+<link rel=stylesheet href=codemirror/lib/codemirror.css>
+<script src=codemirror/lib/codemirror.js></script>
+<script src=codemirror/mode/xml/xml.js></script>
+<script src=codemirror/mode/javascript/javascript.js></script>
+<script src=codemirror/mode/css/css.js></script>
+<script src="codemirror/addon/edit/closetag.js"></script>
+<link href="codemirror/theme/ambiance.css" rel="stylesheet"/>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<style rel= "stylesheet" type= text/css>
+  @import url('css_fase_6.css');
+</style>
+
+<body>
+    <img src="Canvas - Teste.png" class="fundo">
+    <textarea id=code name=code>
+      <html>
+        <head>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
+          <script src="https://cdn.jsdelivr.net/gh/molleindustria/p5.play@master/lib/p5.play.js"></script>
+        </head>
+        <body>
+          <script>
+            var spr, obstacle, obstacle2, imagem;
+
+            function preload(){
+                imagem = loadImage('boneco_teste.png');
+            }
+            function setup(){
+              createCanvas(435,330);
+              spr = createSprite(50,165,60,80);
+              obstacle = createSprite(70, 165, 50,50);
+              obstacle2 = createSprite(400, 165, 50,50);
+              spr.addImage('imagem', imagem);
+            }
+            function draw(){
+              background(255);
+                spr.friction = 0.5;
+                
+
+                if(obstacle.collide(obstacle2)){
+                  spr.collide(obstacle);
+                  text("PARABENS, PROSSIGA PARA A PROXIMA FASE", 100, 100);
+                } else {
+                  spr.displace(obstacle);
+                }
+
+                if(keyDown('RIGHT_ARROW')) spr.velocity.x = 5;
+                if(keyDown('LEFT_ARROW')) spr.velocity.x = -5;
+                
+              drawSprites();
+            }    
+          </script>
+        </body>
+      </html>
+    </textarea>
+    <iframe id=preview></iframe> 
+    <script src="setup_editor_6.js"></script> <!-- VAI PARA O ARQUIVO REFERENTE AO EDITOR -->
+
+    <button onclick= "updatePreview()" class= "button_run">RUN CODE</button>
+    <button onclick= "refreshPreview()" class= "button_refresh">REFRESH CODE</button>
+    
+  </body>
+</html>

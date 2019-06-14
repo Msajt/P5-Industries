@@ -1,0 +1,65 @@
+<!doctype html>
+
+<title>P5 Industries - FASE 04</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="codemirror/doc/docs.css">
+
+<link rel=stylesheet href=codemirror/lib/codemirror.css>
+<script src=codemirror/lib/codemirror.js></script>
+<script src=codemirror/mode/xml/xml.js></script>
+<script src=codemirror/mode/javascript/javascript.js></script>
+<script src=codemirror/mode/css/css.js></script>
+<script src="codemirror/addon/edit/closetag.js"></script>
+<link href="codemirror/theme/ambiance.css" rel="stylesheet"/>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<style rel= "stylesheet" type= text/css>
+  @import url('css_fase_4.css');
+</style>
+
+<body>
+    <img src="Canvas - Teste.png" class="fundo">
+    <textarea id=code name=code>
+      <html>
+        <head>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
+          <script src="https://cdn.jsdelivr.net/gh/molleindustria/p5.play@master/lib/p5.play.js"></script>
+        </head>
+        <body>
+          <script>
+            var spr, blink;
+            function preload(){
+                blink = loadAnimation(
+                    'boneco_teste.png',
+                    'boneco_teste.png',
+                    'boneco_teste.png',
+                    'boneco_teste.png',
+                    'boneco_teste2.png',
+                    'boneco_teste2.png',
+                    'boneco_teste2.png',
+                    'boneco_teste2.png',
+                );
+            }
+            function setup(){
+              createCanvas(435,330);
+              spr = createSprite(218,165,60,80);
+              spr.addAnimation('blink', blink)
+            }
+            function draw(){
+              background(0);
+              drawSprites();
+            }    
+          </script>
+        </body>
+      </html>
+    </textarea>
+    <iframe id=preview></iframe> 
+    <script src="setup_editor_4.js"></script> <!-- VAI PARA O ARQUIVO REFERENTE AO EDITOR -->
+
+    <button onclick= "updatePreview()" class= "button_run">RUN CODE</button>
+    <button onclick= "refreshPreview()" class= "button_refresh">REFRESH CODE</button>
+    
+  </body>
+</html>
