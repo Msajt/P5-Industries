@@ -1,0 +1,75 @@
+<!doctype html>
+
+<title>P5 Industries - FASE 09</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="codemirror/doc/docs.css">
+
+<link rel=stylesheet href=codemirror/lib/codemirror.css>
+<script src=codemirror/lib/codemirror.js></script>
+<script src=codemirror/mode/xml/xml.js></script>
+<script src=codemirror/mode/javascript/javascript.js></script>
+<script src=codemirror/mode/css/css.js></script>
+<script src="codemirror/addon/edit/closetag.js"></script>
+<link href="codemirror/theme/ambiance.css" rel="stylesheet"/>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<style rel= "stylesheet" type= text/css>
+  @import url('css_fase_9.css');
+</style>
+
+<body>
+    <img src="Canvas - Teste.png" class="fundo">
+    <textarea id=code name=code>
+      <html>
+        <head>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.js"></script>
+          <script src="https://cdn.jsdelivr.net/gh/molleindustria/p5.play@master/lib/p5.play.js"></script>
+        </head>
+        <body>
+          <script>
+              var boneco, balas_grupo, inimigos_grupo;
+
+              function preload(){
+              }
+
+              function setup(){
+                createCanvas(435, 330);
+                boneco = createSprite(200, 200, 50, 50);
+                balas_grupo = new Group();
+                inimigos_grupo = new Group();
+              }
+
+              function draw(){
+                background(0);
+                
+                updateSprites();
+
+                boneco.friction = 0.2;
+                if(keyDown('RIGHT_ARROW')) boneco.velocity.x = 4;
+                if(keyDown('LEFT_ARROW')) boneco.velocity.x = -4;
+                if(keyDown('UP_ARROW')) boneco.velocity.y = -4;
+                if(keyDown('DOWN_ARROW')) boneco.velocity.y = 4;
+
+                if (keyWentDown(' ')) {
+                  var bullet = createSprite(boneco.position.x, boneco.position.y, 5, 5);
+                  bullet.setSpeed(3, -90);
+                  bullet.life = 50; // tempo de vida do sprite
+                  balas_grupo.add(bullet); // adiciona um sprite ao grupo
+                }
+
+                drawSprites();
+              } 
+          </script>
+        </body>
+      </html>
+    </textarea>
+    <iframe id=preview></iframe> 
+    <script src="setup_editor_9.js"></script> <!-- VAI PARA O ARQUIVO REFERENTE AO EDITOR -->
+
+    <button onclick= "updatePreview()" class= "button_run">RUN CODE</button>
+    <button onclick= "refreshPreview()" class= "button_refresh">REFRESH CODE</button>
+    
+  </body>
+</html>
