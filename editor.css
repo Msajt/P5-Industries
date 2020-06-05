@@ -1,0 +1,97 @@
+            body{
+                font-family: sans-serif;
+            }
+            /*
+            .areaEdicaoJS{
+                position: absolute;
+                left: 231px;
+                top: 100px;
+                width: 450px;
+                height: 350px;
+                border: 1px solid black;
+            }
+            .areaEdicaoCSS{
+                position: absolute;
+                left: 231px;
+                top: 500px;
+                width: 450px;
+                height: 350px;
+                border: 1px solid black;
+            }
+            .areaEdicaoHTML{
+                position: absolute;
+                left: 231px;
+                top: 900px;
+                width: 450px;
+                height: 350px;
+                border: 1px solid black;
+            }
+            */
+            #preview{
+                position: absolute;
+                right: 235px;
+                top: 150px;
+                width: 450px;
+                height: 350px;
+                border: 1px solid black;
+                border-left: 0px;
+                z-index: 1;
+            }
+            .editor{
+                position: absolute;
+                left: 231px;
+                top: 150px;
+                width: 450px;
+                height: 350px;
+                border: 1px solid black;
+                overflow: auto;
+                font-size: 15;
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bolder;
+                z-index: 1;
+            }
+            /*
+            .editor{
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+            }
+            */
+            .fundo{
+                position: absolute;
+                top: 94px;
+                left: 201px;
+                z-index: 0;
+            }
+            #htmlButton{
+                background: url('icones/html.png');
+                left: 232px;
+            }
+            #cssButton{
+                background: url('icones/css.png');
+                left: 257px;
+            }
+            #jsButton{
+                background: url('icones/js.png');
+                left: 282px;
+            }
+            #youtubeButton{
+                left: 735px;
+                padding: 12.5px 74px;
+                background: transparent;
+            }
+            button{
+                position: absolute;
+                top: 125px;
+                opacity: 0.5;
+                border: none;
+                padding: 12.5px;
+                cursor: pointer;
+                z-index: 1;
+            }
+            button:hover{
+                opacity: 1;
+            }
+            button.active{
+                opacity: 1;
+            }

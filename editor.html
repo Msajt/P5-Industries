@@ -1,0 +1,43 @@
+<html>
+   <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.8">
+       <link rel="stylesheet" type="text/css" href="editor.css" />
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       <script src= "editor.js"></script>
+       <title>HTML EDITOR</title>
+   </head>
+   <body>
+       
+    <!--
+        <div class="areaEdicaoJS">
+            <div class="editor" id="jseditor" contenteditable="true" onkeyup="showPreview()"></div>
+        </div>
+        <div class="areaEdicaoCSS">
+            <div class="editor" id="csseditor" contenteditable="true" onkeyup="showPreview()"></div>
+        </div>
+        <div class="areaEdicaoHTML">
+            <div class="editor" id="htmleditor" contenteditable="true" onkeyup="showPreview()"></div>
+        </div>
+    -->
+
+    <!-- FRAME DO PREVIEW -->
+        <iframe id="preview"></iframe>
+    
+    <!-- BOTÕES PARA TROCAR ENTRE EDITORES -->
+        <button id="htmlButton" onclick="openEditor('htmleditor')"></button>
+        <button id="cssButton" onclick="openEditor('csseditor')"></button>
+        <button id="jsButton" onclick="openEditor('jseditor')"></button>
+        <a href="https://www.youtube.com/watch?v=UNujvMHc2PY&list=PL7jeQEDfIQ1Pzy0VzJlKnYG7qzWYX3Vq2" target="_blank">
+            <button id="youtubeButton"></button>
+        </a>
+        
+    <!-- JANELAS DE EDIÇÃO -->
+        <div class="editor" id="htmleditor" contenteditable="true" style="display:none" onkeyup="showPreview()"></div>
+        <div class="editor" id="csseditor" contenteditable="true" style="display:none" onkeyup="showPreview()"></div>
+        <div class="editor" id="jseditor" contenteditable="true" style="display:none" onkeyup="showPreview()"></div>
+
+    <!-- BACKGROUND DE FUNDO -->
+        <img src="icones/fundo.PNG" class="fundo">
+        
+   </body>
+</html>
